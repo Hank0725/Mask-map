@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>口罩地圖</title>
+    <title>台灣口罩地圖</title>
     <link rel="stylesheet" href="mask.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
@@ -19,15 +19,30 @@
         <div class="header">
 
         </div>
-
         <div id="map"></div>
         <div class="content"></div>
         <div class="sidebar">
-            <ul>
-                <li class="list"></li>
-            </ul>
+            <div class="selectbar">
+                <select id="select" name="" class="optionlist-county">
+                    <option class="option-county" value="option-county">--請選擇城市--</option>
+                </select>
+                <select id="selecttown" name="" class="optionlist-town">
+                    <option class="option-town" value="option-town">--請選擇地區--</option>
+                </select>
+                <span class="much">已取得口罩數量的藥局有</span><span id="value">
+                </span><span class="much">家</span>
+
+
+            </div>
+            <div class="pharmacy-list">
+                <ul>
+                    <li class="list"></li>
+                </ul>
+            </div>
         </div>
-        <div class="footer">Copyright 漢克工作室 2020</div>
+        <div class="footer clearfix">
+            <p>Copyright 漢克工作室 2020</p>
+        </div>
     </div>
 </body>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
