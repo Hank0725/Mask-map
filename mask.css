@@ -44,6 +44,10 @@ img{
 	height: auto ;
 }
 /* CSS Reset end */
+body{
+    font-family: "微軟正黑體";
+}
+
 .wrap{
     max-width: 1024px;
     margin: 0 auto;
@@ -96,7 +100,7 @@ img{
 }
 
 .selectbar{
-    background-color: gray;
+    background-color:rgb(194, 192, 192);
     height: 150px;
 }
 .optionlist-county{
@@ -113,12 +117,15 @@ img{
     text-align-last: center;
     margin: 15px;
 }
-    .optionlist {
+.optionlist {
     width: 80px;
     height: 40px;
     border: 1px solid #000;
     }
-
+#value{
+    font-size: 30px;
+    color: #668afe;
+}
 
 .pharmacy-list{
     width: 100%;
@@ -127,10 +134,6 @@ img{
     overflow-y: scroll;
 }
 
-.pharmacy-list h2{
-    float: left;
-    padding: 3px;
-}
 
 .pharmacy-list li{    
     text-align: center;  
@@ -144,29 +147,34 @@ img{
      text-decoration: none;
  }
 
+
 .pharmacy{
-    width: auto;
-    padding: 5px;
-    border-bottom: 3px solid white;
+    width: 100%;
+    box-shadow: 1px 1px 3px black;
+    border-bottom: 2px solid white;
 }
+
+ .pharmacy:hover{
+    background-color:rgb(231, 229, 229);
+ }
 
 .pharmacy h2{
   font-size: 18px;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   padding: 10px;
 }
 
 .pharmacy span{
-    float: left;
+    display: block;
+    text-align: left;
     font-size: 12px;
+    padding: 10px;
 }
 
 .pharmacy p 
- { 
-     font-size: 12px;
-      text-align:left   ;  
-      padding: 10px; 
+ {    
+      font-size: 12px;
     }
 
 .pharmacy .mask_adult{
