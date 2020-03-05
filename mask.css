@@ -244,9 +244,9 @@ body{
  background-color: #668afe;
 }
 
-
-
-
+.showmenu{
+    display: none;
+}
 
 
 .footer{
@@ -260,24 +260,6 @@ body{
 
 
 @media(max-width:768px){
-    .header{
-        height: auto;
-    }
-    
-     .logo{
-       position: relative;
-       height: 250px;
-       width: 250px;
-       margin: 30px auto 30px auto;
-     }
-    
-     .logo a{
-         display: block;
-         width: 250px;
-         height: 250px;
-         margin:20px auto 20px auto;
-         background: url(https://pbs.twimg.com/profile_images/819857147546595328/QfzeN-LP.jpg)
-     }
     
     .menu{
         float: none;
@@ -298,17 +280,139 @@ body{
     }
 
     #map{
-        display: block;
+
+       position: relative;
         float: none;
         width:100%;
         clear: both;
     }
+    
+    .showmenu{
+       position: absolute;
+        display: block  ;
+        top: 0;
+        left: 40%;
+        width: 120x;
+        height: 50px;
+        background-color:#668afe;
+        z-index: 10000;
+       
+        border-radius: 0  0 10px 10px;
+    }
+     
+    .showmenu a{
+        display: block;
+        font-size: 16px;
+        color: white;  
+        margin: 5px;
+       text-decoration: none;
+    }
 
-     .content ,.sidebar{
+     .sidebar{
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        height: 100%;
+        overflow: hidden;
+        -webkit-transform: translateX(-40%);
+        transform: translateX(-40%);
+        z-index: 1000000;
+        transition: all .3s;
+    
+         }
+     
+    .open{
+        display: block;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .close{
+        display: none;
+        -webkit-transform: translateX(-30%);
+        transform: translateX(-30%);    
+    }
+
+    }
+
+
+
+@media(max-width:414px){
+    
+    .menu{
         float: none;
-        border: none;
-        width: 100% ;
-        margin: 0;
+        margin: 20px 0 20px 0;
+    }
+    
+    .menu li{
+        width: 100%;
+        text-align: center;
+        margin: 10px auto 10px auto;
+        border-right:none;
+        background-color: tomato;
+    }
+    
+    .menu li a{
+        width: 100%;
+        text-align: center;
+    }
+
+    #map{
+
+       position: relative;
+        float: none;
+        width:100%;
         clear: both;
-     }
+    }
+    
+    .showmenu{
+       position: absolute;
+        display: block  ;
+        top: 0;
+        left: 40%;
+        width: 120x;
+        height: 50px;
+        background-color:#668afe;
+        z-index: 10000;
+       
+        border-radius: 0  0 10px 10px;
+    }
+     
+    .showmenu a{
+        display: block;
+        font-size: 16px;
+        color: white;  
+        margin: 5px;
+       text-decoration: none;
+    }
+
+     .sidebar{
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        height: 100%;
+        overflow: hidden;
+        -webkit-transform: translateX(-40%);
+        transform: translateX(-40%);
+        z-index: 1000000;
+        transition: all .3s;
+    
+         }
+     
+    .open{
+        display: block;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .close{
+        display: none;
+        -webkit-transform: translateX(-30%);
+        transform: translateX(-30%);    
+    }
+
     }

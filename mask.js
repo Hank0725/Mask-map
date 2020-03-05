@@ -136,4 +136,22 @@ xhr.onload = function () {
 }
 
 
+//開啟左側選單
+let show = document.querySelector(".openmenu")
+show.addEventListener("click", addclass, false);
+function addclass(e) {
+  e.preventDefault();
+  let sidebar = document.querySelector(".sidebar");
+  sidebar.classList.remove("close");
+  sidebar.classList.add("open");
+}
 
+//關閉右側選單
+let close = document.querySelector(".closemenu");
+close.addEventListener("click", removeclass, false);
+function removeclass(e) {
+  e.preventDefault();
+  let sidebar = document.querySelector(".sidebar");
+  sidebar.classList.remove("open");
+  sidebar.classList.add("close");
+}
