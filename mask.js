@@ -44,7 +44,7 @@ xhr.onload = function () {
       mask = redIcon;
     } else { mask = blueIcon; }
     //在各個圖層上加上各個marker
-    markers.addLayer(L.marker([data[i].geometry.coordinates[1], data[i].geometry.coordinates[0]], { icon: mask }).bindPopup('<h2>藥局名稱:' + data[i].properties.name + '</h2><span>電話:' + data[i].properties.phone + '</span><span>住址:' + data[i].properties.address + '</span><p class="mask_adult clearfix">成人:' + data[i].properties.mask_adult + '</p><p class="mask_child clearifx">兒童：' + data[i].properties.mask_child + '</p><p class="note clearfix">備註:' + data[i].properties.note + data[i].properties.custom_note + '</p><span class="updatetime">更新時間:' + data[i].properties.updated + '</span>'));
+    markers.addLayer(L.marker([data[i].geometry.coordinates[1], data[i].geometry.coordinates[0]], { icon: mask }).bindPopup('<h2>藥局名稱:' + data[i].properties.name + '</h2><span>電話:' + data[i].properties.phone + '</span><span>住址:' + data[i].properties.address + '</span><p class="mask_adult clearfix">成人:' + data[i].properties.mask_adult + '</p><p class="mask_child clearifx">兒童:' + data[i].properties.mask_child + '</p><p class="note clearfix">備註:' + data[i].properties.note + data[i].properties.custom_note + '</p><span class="updatetime">更新時間:' + data[i].properties.updated + '</span>'));
     map.addLayer(markers);
   }
   let length = data.length;
@@ -125,7 +125,7 @@ xhr.onload = function () {
         if (data[i].properties.mask_adult > 0 || data[i].properties.mask_child > 0) {
           newdata.push(data);
           document.getElementById("value").textContent = newdata.length;
-          str += '<div class="pharmacy"><h2>藥局名稱:' + data[i].properties.name + '</h2><span>電話:' + data[i].properties.phone + '</span><span>住址:' + data[i].properties.address + '</span><p class="mask_adult">成人:' + data[i].properties.mask_adult + '</p><p class="mask_child">兒童：' + data[i].properties.mask_child + '</p><span class="note">備註:' + data[i].properties.note + data[i].properties.custom_note + '</span><p class="updatetime">更新時間：' + data[i].properties.updated + '</p></div>';
+          str += '<div class="pharmacy"><h2>藥局名稱:' + data[i].properties.name + '</h2><span>電話:' + data[i].properties.phone + '</span><span>住址:' + data[i].properties.address + '</span><p class="mask_adult">成人:' + data[i].properties.mask_adult + '</p><p class="mask_child">兒童:' + data[i].properties.mask_child + '</p><span class="note">備註:' + data[i].properties.note + data[i].properties.custom_note + '</span><p class="updatetime">更新時間:' + data[i].properties.updated + '</p></div>';
           list.innerHTML = str;
         }
       }

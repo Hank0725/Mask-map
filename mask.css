@@ -402,6 +402,18 @@ body{
         transition: all .3s;
     
          }
+    #select{
+        width: 100%;
+    }
+    #selecttown{
+        margin:3px 0 10px 0;
+    }
+    .sidebar span{
+        font-size: 12px;
+    }
+    #value{
+        font-size: 20px;
+    }
      
     .open{
         display: block;
