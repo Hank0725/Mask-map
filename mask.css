@@ -371,7 +371,7 @@ body{
        position: absolute;
         display: block  ;
         top: 0;
-        left: 40%;
+        left: 50%;
         width: 120x;
         height: 50px;
         background-color:#668afe;
@@ -393,20 +393,25 @@ body{
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 40%;
+        width: 50%;
         height: 100%;
         overflow: hidden;
-        -webkit-transform: translateX(-40%);
-        transform: translateX(-40%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
         z-index: 1000000;
         transition: all .3s;
     
          }
+    .selectbar{
+        height: 120px;
+    }
     #select{
-        width: 100%;
+        width: 80%;
+        margin: 5px 10px 5px 10px;
     }
     #selecttown{
-        margin:3px 0 10px 0;
+        width: 80%;
+        margin: 5px 20px 5px 20px;
     }
     .sidebar span{
         font-size: 12px;
@@ -423,8 +428,8 @@ body{
 
     .close{
         display: none;
-        -webkit-transform: translateX(-30%);
-        transform: translateX(-30%);    
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);    
     }
 
     }
