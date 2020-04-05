@@ -68,6 +68,7 @@ xhr.onload = function () {
   };
   // 再用 foreach 去判斷陣列裡面所有值是否有吻合
   let countyoption = [];
+
   county.forEach(function (value) {
     if (countyoption.indexOf(value) == -1) {
       countyoption.push(value);
