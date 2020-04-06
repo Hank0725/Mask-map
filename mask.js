@@ -47,6 +47,27 @@ xhr.onload = function () {
     markers.addLayer(L.marker([data[i].geometry.coordinates[1], data[i].geometry.coordinates[0]], { icon: mask }).bindPopup('<h2>藥局名稱:' + data[i].properties.name + '</h2><span>電話:' + data[i].properties.phone + '</span><span>住址:' + data[i].properties.address + '</span><p class="mask_adult clearfix">成人:' + data[i].properties.mask_adult + '</p><p class="mask_child clearifx">兒童:' + data[i].properties.mask_child + '</p><p class="note clearfix">備註:' + data[i].properties.note + data[i].properties.custom_note + '</p><span class="updatetime">更新時間:' + data[i].properties.updated + '</span>'));
     map.addLayer(markers);
   }
+
+
+
+
+  //偵測使用者定位，設定地圖中心點
+  navigator.geolocation.getCurrentPosition(getPosition);
+  function getPosition(position) {
+    var myLat = position.coords.latitude;
+    var myLong = position.coords.longitude;
+    map.setView(new L.LatLng(myLat, myLong), 15);
+    L.marker([myLat, myLong], {icon: redIcon}).addTo(map)
+        .bindPopup(`
+                <div class="map__yourPosition">
+                    <i class="far fa-grin-beam"></i>
+                    <h3>這是你所在的位置</h3>
+                </div>
+        `)
+    .openPopup();
+}
+
+
   let length = data.length;
   let county = [];
   //將城市加入select選項
@@ -54,17 +75,19 @@ xhr.onload = function () {
   let optionlist_county = document.querySelector(".optionlist-county");
   let select = document.getElementById("select");
   let selection = document.getElementById("selecttown");
-
+  let ul =document.querySelector(".ul")
   // 監聽城市按鈕選項
   select.addEventListener("change", addtown, false);
   // //監聽地區增加藥局列表按鈕選項  
-  selection.addEventListener("change", pharmacylist, false)
-
-
+  selection.addEventListener("change", pharmacylist, false);
+  //監聽點選li藥局選項
+  ul.addEventListener("click",location,false);
+ 
 
   //新增城市的陣列
   for (let i = 0; i < length; i++) {
-    county.push(data[i].properties.county);
+    if(data[i].properties.county != ""){
+    county.push(data[i].properties.county);}
   };
   // 再用 foreach 去判斷陣列裡面所有值是否有吻合
   let countyoption = [];
@@ -80,7 +103,23 @@ xhr.onload = function () {
     str.textContent = countyoption[i];
     optionlist_county.appendChild(str);
   }
+  
 
+  //click藥局選單後彈跳出藥局
+  function location(element){
+    let lat, lon;
+   
+    let index = element.getAttribute('list');
+    lat = addrDataArr[index].geometry.coordinates[1];
+    lon = addrDataArr[index].geometry.coordinates[0];
+    //移動地圖中心點
+    // map.panTo(new L.LatLng(lat, lon), {animate: true});
+    //移動地圖中心點，改變縮放級別
+    map.setView(new L.LatLng(lat, lon), 25, {animate: true});
+    console.log(e.target);  
+//  const [lng, lat] = pharmacy.geometry.coordinates;
+//     this.openStreetMap.moveTo(lat, lng);
+  }
 
 
   //  使用change函式篩檢地區陣列出來
