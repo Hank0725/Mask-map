@@ -108,7 +108,6 @@ xhr.onload = function () {
   //click藥局選單後彈跳出藥局
   function location(element){
     let lat, lon;
-   
     let index = element.getAttribute('list');
     lat = addrDataArr[index].geometry.coordinates[1];
     lon = addrDataArr[index].geometry.coordinates[0];
@@ -117,8 +116,6 @@ xhr.onload = function () {
     //移動地圖中心點，改變縮放級別
     map.setView(new L.LatLng(lat, lon), 25, {animate: true});
     console.log(e.target);  
-//  const [lng, lat] = pharmacy.geometry.coordinates;
-//     this.openStreetMap.moveTo(lat, lng);
   }
 
 
